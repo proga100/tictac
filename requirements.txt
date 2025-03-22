@@ -1,0 +1,2 @@
+# No additional packages required - using standard Python libraries
+# Python 3.x required with Tkinter (included in standard library) 
