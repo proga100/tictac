@@ -1,15 +1,52 @@
 # Крестики-Нолики (Tic-Tac-Toe)
 
-A simple desktop Tic-Tac-Toe game for Windows.
+Мобильная игра Крестики-Нолики для Android с прогрессией уровней сложности.
 
-## Requirements
-- Python 3.x (with Tkinter included)
+## Особенности
+- Три уровня сложности: Easy, Medium, Hard
+- Режимы игры: против ИИ или на двоих
+- Прогрессия уровней: 3x3, 4x4, 5x5
+- Адаптация правил игры под размер поля
 
-## How to Run
-1. Make sure Python is installed on your system
-2. Run the game with: `python tictactoe.py`
+## Создание APK для Android
 
-## Game Rules
-- Players take turns placing X and O on a 3×3 grid
-- The first player to get 3 of their marks in a row (horizontally, vertically, or diagonally) wins
-- If all cells are filled and no player has won, the game is a draw 
+### Требования
+- Python 3.x
+- Kivy
+- Buildozer
+
+### Установка необходимых инструментов
+```
+pip install kivy buildozer
+```
+
+### Сборка APK (в Linux или WSL)
+1. Перейдите в каталог проекта
+2. Инициализируйте Buildozer (если файл buildozer.spec уже есть, пропустите этот шаг):
+   ```
+   buildozer init
+   ```
+3. Соберите APK:
+   ```
+   buildozer android debug
+   ```
+4. После завершения сборки APK файл будет находиться в каталоге `bin/`
+
+### Установка на устройство Android
+1. Подключите устройство Android через USB с включенной отладкой
+2. Установите APK:
+   ```
+   buildozer android deploy
+   ```
+   
+## Запуск на ПК (без создания APK)
+```
+python main.py
+```
+
+## Правила игры
+- Игроки по очереди ставят X и O на игровом поле
+- Побеждает тот, кто первым выстроит ряд своих символов (по горизонтали, вертикали или диагонали)
+- На уровне 1 (3x3) нужно выстроить 3 в ряд
+- На уровне 2 (4x4) нужно выстроить 4 в ряд
+- На уровне 3 (5x5) нужно выстроить 5 в ряд 
